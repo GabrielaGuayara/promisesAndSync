@@ -40,3 +40,7 @@ async function getUserData(id) {
   console.log(e.message)}
 }
 
+//Call the function with 2 as paramenter. Use then to retrive data and catch to print out errors
+getUserData(2)
+.then(data => console.log(data))
+.catch(error => console.log(error.message))
