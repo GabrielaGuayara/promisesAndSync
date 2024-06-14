@@ -16,12 +16,13 @@ async function getUserData(id) {
   try{
   
   //Determine database to access for a particular user's information.
-  const valueReturnedFromCentral = await central(id);
+  const centralDB = await central(id);
 
   //Access databases that contains the user's basic information, including username, website, and company. 
-  const userPersonalData = await dbs[valueReturnedFromCentral](id)
+  const userInfo = await dbs[centralDB](id)
     
-
+  //Fetch personal data for each user is contained within the vault database 
+  const userPersonalData = await vault(id);
 
 }catch(e){
   console.log(e.message)}
