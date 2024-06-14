@@ -24,6 +24,19 @@ async function getUserData(id) {
   //Fetch personal data for each user is contained within the vault database 
   const userPersonalData = await vault(id);
 
+// Return an object containing the data specified on the asigment.
+  return{
+      id,
+      name: userPersonalData.name,
+      username: userInfo.username,
+      email: userPersonalData.email,
+      address: userPersonalData.address,
+      phone: userPersonalData.phone,
+      website: userInfo.website,
+      company: userInfo.company
+
+  }
 }catch(e){
   console.log(e.message)}
 }
+
